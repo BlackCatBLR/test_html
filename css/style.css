@@ -1,0 +1,560 @@
+/**************************** 
+**** reset styles****
+*****************************/
+
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #F2F2F2;
+    min-height: 600px;
+    height: 100vh;
+}
+
+main {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 90%;
+    max-width: 665px;
+    height: 481px;
+    display: grid;
+    grid-template-columns: 20.75% 1fr;
+}
+
+aside {
+    background-color: #5A61ED;
+    color: white;
+    position: relative;
+}
+
+
+
+h1 {
+    position: absolute;
+    bottom: 72px;
+    right: -44px;
+    width: 162px;
+    height: 63px;
+    font-family: 'PT Sans', sans-serif;
+    font-weight: 400;
+    font-size: 49px;
+    line-height: 63px;
+    letter-spacing: 0.5px;
+    transform: rotate(-90deg);
+    transition: 0.4s;
+}
+
+.registration {
+    background-color: white;
+    padding: 39px 22px 33px 20px;
+    position: relative;
+}
+
+.animation-svg {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+
+form {
+    width: 100%;
+    height: 100%;
+    color: #111111;
+    font-family: 'Work Sans', sans-serif;
+    position: relative;
+    z-index: 2;
+}
+
+form>h2 {
+    height: 26px;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 22px;
+    line-height: 26px;
+    letter-spacing: -0.46px;
+    font-weight: 600;
+    transition: 1s;
+    color: transparent;
+    opacity: 0;
+}
+
+form>h2.visible {
+    color: black;
+    opacity: 1;
+}
+
+
+form>p {
+    height: 16px;
+    font-size: 13.5px;
+    line-height: 16px;
+    margin-bottom: 20px;
+    transition: 1s;
+    color: transparent;
+    opacity: 0;
+}
+
+form>p.visible {
+    color: black;
+    opacity: 1;
+}
+
+@media (max-width:700px) {
+    body {
+        height: 900px;
+    }
+
+    main {
+        height: 100%;
+        padding: 50px 0;
+    }
+
+    .container {
+        height: 800px;
+        grid-template-columns: 1fr;
+        grid-template-rows: 100px 1fr;
+    }
+
+    h1 {
+        left: 22.5px;
+        bottom: 6.5px;
+        transform: rotate(0deg);
+        font-size: 35px;
+    }
+
+    form {
+        height: fit-content;
+    }
+
+    form>p {
+        margin-bottom: 25px;
+    }
+}
+
+@media (max-width:375px) {
+    form>p {
+        margin-bottom: 50px;
+    }
+}
+
+/**************************** 
+**** First and Last name ****
+*****************************/
+.name {
+    display: flex;
+    gap: 13px;
+    margin-bottom: 16px;
+}
+
+.name>div {
+    width: 50%;
+    transition: 1s;
+}
+
+
+.name label {
+    display: block;
+    height: 12px;
+    font-size: 12px;
+    line-height: 14px;
+    color: #7C7C7C;
+    margin-bottom: 5px;
+	letter-spacing: -0.2px;
+}
+
+.name input {
+    border: none;
+    width: 100%;
+    height: 22px;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 14px;
+    line-height: 16px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #F2F2F2;
+	letter-spacing: 0.5px;
+	
+}
+.first-name,
+.last-name {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.first-name.visible,
+.last-name.visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+@media (max-width:700px) {
+    .name {
+        flex-direction: column;
+    }
+
+    .name>div {
+        width: 100%;
+    }
+}
+/****************************** 
+**** remove chrome input bg ****
+******************************/
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+/****************************** 
+**** Nationality and email ****
+******************************/
+
+
+.nation-mail {
+    display: flex;
+    gap: 13px;
+    margin-bottom: 16px;
+}
+
+.nation-mail>div {
+    width: 50%;
+    transition: 1s;
+}
+
+.nation-mail label {
+    display: block;
+    height: 14px;
+    font-size: 12px;
+    line-height: 14px;
+    color: #7C7C7C;
+    margin-bottom: 5px;
+}
+
+.nation-mail input,
+.nation-mail select {
+    border: none;
+    width: 100%;
+    height: 22px;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 14px;
+    line-height: 16px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #F2F2F2;
+	margin-left: -3px;
+}
+
+.mail {
+    position: relative;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.mail.visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+.mail>img {
+    position: absolute;
+    right: 0;
+    bottom: 12px;
+}
+
+.nationality {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.nationality.visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+@media (max-width:700px) {
+    .nation-mail {
+        flex-direction: column;
+    }
+
+    .nation-mail>div {
+        width: 100%;
+    }
+}
+
+/********************************* 
+**** Date Of Birth and Gender ****
+*********************************/
+
+.dob-gender {
+    display: flex;
+    gap: 13px;
+    margin-bottom: 16px;
+}
+
+.dob-gender>div {
+    width: 50%;
+    transition: 1s;
+}
+
+.dob-gender>div>label {
+    display: block;
+    height: 14px;
+    font-size: 12px;
+    line-height: 14px;
+    color: #7C7C7C;
+    margin-bottom: 3px;
+}
+
+
+.date-select-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.date-select-container select {
+    border: none;
+    height: 23px;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 14px;
+    line-height: 16px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #F2F2F2;
+	margin-left: -3px;
+}
+
+
+.date-of-birth [name="day"] {
+    width: 23.83%;
+}
+
+.date-of-birth [name="month"] {
+    width: 38.72%;
+}
+
+.date-of-birth [name="year"] {
+    width: 28.94%;
+}
+
+.date-of-birth {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.date-of-birth.visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+.gender-container {
+    display: flex;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.gender-container>div {
+    display: inherit;
+    align-items: center;
+}
+
+.gender-container>div label {
+    margin-left: 6px;
+}
+
+.gender-container .male {
+    margin-right: 18px;
+}
+
+.gender {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.gender.visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+@media (max-width:700px) {
+    .dob-gender {
+        flex-direction: column;
+    }
+
+    .dob-gender>div {
+        width: 100%;
+    }
+}
+
+/***************** 
+**** Password ****
+*****************/
+
+.pw {
+    display: flex;
+    gap: 13px;
+    margin-bottom: 97px;
+}
+
+.pw>div {
+    width: 50%;
+    transition: 1s;
+}
+
+.pw label {
+    display: block;
+    height: 14px;
+    font-size: 12px;
+    line-height: 14px;
+    color: #7C7C7C;
+    margin-bottom: 5px;
+}
+
+.pw input {
+    border: none;
+    width: 100%;
+    height: 22px;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 14px;
+    line-height: 16px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #F2F2F2;
+}
+
+.password,
+.pw-confirm {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.password.visible,
+.pw-confirm.visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+@media (max-width:700px) {
+    .pw {
+        flex-direction: column;
+        margin-bottom: 50px;
+    }
+	.pw>div {
+    width: 100%;
+	}
+
+}
+
+/************************** 
+**** Login and sign up ****
+**************************/
+
+.login-signup {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 1s;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.login-signup.visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+.login-signup>div {
+    width: 50%;
+}
+
+.login-signup p {
+    height: 19px;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 13px;
+    line-height: 15px;
+	letter-spacing: -0.25px;
+}
+
+.login-signup button {
+    height: 33px;
+    width: 154px;
+    border-radius: 0px;
+    background-color: #5A61ED;
+    border: 0.5px solid white;
+    color: white;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.login-signup button:hover {
+    background-color: white;
+    border-color: #5A61ED;
+    color: #5A61ED;
+}
+
+@media (max-width:700px) {
+    .login-signup {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+}
+
+/**************************************** 
+**** JavaScript functionality styles ****
+****************************************/
+
+input.wrong {
+    color: red;
+    border: 1px solid red;
+}
+
+.mail>img.wrong {
+    display: none;
+}
+
+.login-signup button.wrong-submit {
+    animation-name: buttonshaker;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes buttonshaker {
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(5px);
+    }
+
+    50% {
+        transform: translateX(-5px);
+    }
+
+    75% {
+        transform: translateX(5px);
+    }
+
+    100% {
+        transform: translateX(-5px);
+    }
+}
+
+/* the 16th point */
+[type='text'],
+[type='email'],
+[type='password'] {
+    text-overflow: ellipsis;
+}
